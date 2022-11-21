@@ -2,11 +2,14 @@
 @import "fonts";
 @import "colors";
 @import "hero";
+@import "section-1";
 @import "footer";
 
 body {
     font-family: Akrobat;
     font-size: 16px;
+    color: $white;
+    background-color: $blue;
 }
 
 .container {
@@ -39,4 +42,15 @@ body {
     padding: 0 20px;
     background-image: linear-gradient(143.05deg, #FCA82D, #EFC449);
     border-radius: 30px;
+}
+
+.arrow-down {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    fill: #EFC449;
 }

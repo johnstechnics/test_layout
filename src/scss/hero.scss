@@ -3,6 +3,7 @@
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
+    overflow: hidden;
 
     &__container {
         padding-top: 50px;
@@ -248,15 +249,7 @@
     }
 
     &__arrow-down {
-        flex: 0 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        background: #ffffff0f;
-        fill: #EFC449;
+        background: rgba(255, 255, 255, 0.0588235294);
 
         @media (max-width: 991px) {
             & {
