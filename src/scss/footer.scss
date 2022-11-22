@@ -1,0 +1,106 @@
+.footer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-image: url('../img/footer_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        padding-bottom: 96px;
+
+        @media (max-width: 764px) {
+            & {
+                grid-template-columns: 1fr;
+                row-gap: 50px;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__box-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 50px;
+        text-transform: uppercase;
+    }
+
+    &__form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            height: 60px;
+            background-color: #ffffff17;
+            border-radius: 5px;
+            margin-bottom: 28px;
+            padding: 0 20px;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 35px;
+            color: $white;
+
+            &::placeholder {
+                color: #E9F1FF;
+            }
+
+            &:focus {
+                background-color: transparent;
+                outline: 2px solid #EFC247;
+            }
+
+            &:nth-child(4) {
+                margin-bottom: 0;
+            }
+        }
+
+        .btn {
+            position: absolute;
+            bottom: -96px;
+            align-self: flex-end;
+
+            @media (max-width: 764px) {
+                & {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__info {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+
+        a {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 764px) {
+            & {
+                display: none;
+            }
+        }
+    }
+
+    &__info-mobile {
+        display: none;
+
+        @media (max-width: 764px) {
+            & {
+                display: block;
+                margin-top: 96px;
+            }
+        }
+    }
+}
