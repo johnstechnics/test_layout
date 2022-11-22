@@ -62,6 +62,10 @@
             &:nth-child(4) {
                 margin-bottom: 0;
             }
+
+            &.error {
+                outline: 2px solid #ef4747;
+            }
         }
 
         .btn {
