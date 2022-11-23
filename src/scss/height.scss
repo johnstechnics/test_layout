@@ -1,5 +1,9 @@
-.section-1 {
+.height {
     overflow: hidden;
+
+    &__container {
+        padding-bottom: 80px;
+    }
 
     &__header {
         display: flex;
@@ -20,7 +24,7 @@
             }
         }
 
-        @media (max-width: 764px) {
+        @media (max-width: 768px) {
             & {
                 flex-direction: column-reverse;
                 align-items: flex-start;
@@ -120,7 +124,6 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
         gap: 50px;
-        margin-bottom: 80px;
 
         p {
             font-size: 24px;
@@ -160,7 +163,7 @@
         }
     }
 
-    .section-1__img-2 {
+    &__img-2 {
         width: 150%;
 
         @media (max-width: 991px) {

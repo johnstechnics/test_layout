@@ -91,12 +91,12 @@ export function sendMail() {
 export function phoneMask() {
     window.addEventListener("DOMContentLoaded", function () {
         [].forEach.call(document.querySelectorAll('.phone'), function (input) {
-            var keyCode;
+            let keyCode;
             function mask(event) {
                 event.keyCode && (keyCode = event.keyCode);
-                var pos = this.selectionStart;
+                let pos = this.selectionStart;
                 if (pos < 3) event.preventDefault();
-                var matrix = "+7 (___) ___ ____",
+                let matrix = "+7 (___) ___ ____",
                     i = 0,
                     def = matrix.replace(/\D/g, ""),
                     val = this.value.replace(/\D/g, ""),
@@ -108,7 +108,7 @@ export function phoneMask() {
                     i < 5 && (i = 3);
                     new_value = new_value.slice(0, i)
                 }
-                var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+                let reg = matrix.substr(0, this.value.length).replace(/_+/g,
                     function (a) {
                         return "\\d{1," + a.length + "}"
                     }).replace(/[+()]/g, "\\$&");
@@ -124,5 +124,44 @@ export function phoneMask() {
 
         });
 
+    });
+};
+
+export function scroll() {
+    const link1 = document.querySelector('.scroll-height');
+    const link2 = document.querySelector('.scroll-about');
+    const link3 = document.querySelector('.scroll-about__box-3');
+    const link4 = document.querySelector('.scroll-about__box-6');
+    const link5 = document.querySelector('.scroll-mass-media');
+
+    const section1 = document.querySelector('.height');
+    const section2 = document.querySelector('.about');
+    const section3 = document.querySelector('.about .about__box-3');
+    const section4 = document.querySelector('.about .about__box-6');
+    const section5 = document.querySelector('.mass-media');
+
+    link1.addEventListener('click', function (event) {
+        event.preventDefault();
+        section1.scrollIntoView({ behavior: "smooth" });
+    });
+
+    link2.addEventListener('click', function (event) {
+        event.preventDefault();
+        section2.scrollIntoView({ behavior: "smooth" });
+    });
+
+    link3.addEventListener('click', function (event) {
+        event.preventDefault();
+        section3.scrollIntoView({ behavior: "smooth" });
+    });
+
+    link4.addEventListener('click', function (event) {
+        event.preventDefault();
+        section4.scrollIntoView({ behavior: "smooth" });
+    });
+
+    link5.addEventListener('click', function (event) {
+        event.preventDefault();
+        section5.scrollIntoView({ behavior: "smooth" });
     });
 };
