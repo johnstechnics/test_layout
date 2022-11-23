@@ -16,6 +16,7 @@ export function isWebp() {
 export function sendMail() {
     document.addEventListener('DOMContentLoaded', function () {
         const form = document.querySelector('.footer__form');
+        const title = document.querySelector('.footer__title');
         form.addEventListener('submit', formSend);
 
         async function formSend(event) {
@@ -36,6 +37,8 @@ export function sendMail() {
                     alert(result.message);
                     form.reset();
                     form.classList.remove('sending');
+                    title.textContent = 'Супер!';
+                    form.innerHTML = '<p class="footer__success-text">Нам ушло уведомление! Как только мы его получим, сразу выйдем на связь для уточнения деталей.</p>';
                 } else {
                     alert('Ошибка');
                     form.classList.remove('sending');
@@ -58,14 +61,7 @@ export function sendMail() {
                         formAddError(input);
                         error++;
                     }
-                }
-                // else if (input.classList.contains('phone')) {
-                //     if (phoneTest(input)) {
-                //         formAddError(input);
-                //         error++;
-                //     }
-                // } 
-                else {
+                } else {
                     if (input.value === '') {
                         formAddError(input);
                         error++;
@@ -89,10 +85,44 @@ export function sendMail() {
             return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
         };
 
-        // function phoneTest(input) {
-        //     return !/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(input.value);
-        // };
+    });
+};
 
+export function phoneMask() {
+    window.addEventListener("DOMContentLoaded", function () {
+        [].forEach.call(document.querySelectorAll('.phone'), function (input) {
+            var keyCode;
+            function mask(event) {
+                event.keyCode && (keyCode = event.keyCode);
+                var pos = this.selectionStart;
+                if (pos < 3) event.preventDefault();
+                var matrix = "+7 (___) ___ ____",
+                    i = 0,
+                    def = matrix.replace(/\D/g, ""),
+                    val = this.value.replace(/\D/g, ""),
+                    new_value = matrix.replace(/[_\d]/g, function (a) {
+                        return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+                    });
+                i = new_value.indexOf("_");
+                if (i != -1) {
+                    i < 5 && (i = 3);
+                    new_value = new_value.slice(0, i)
+                }
+                var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+                    function (a) {
+                        return "\\d{1," + a.length + "}"
+                    }).replace(/[+()]/g, "\\$&");
+                reg = new RegExp("^" + reg + "$");
+                if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+                if (event.type == "blur" && this.value.length < 5) this.value = ""
+            }
+
+            input.addEventListener("input", mask, false);
+            input.addEventListener("focus", mask, false);
+            input.addEventListener("blur", mask, false);
+            input.addEventListener("keydown", mask, false)
+
+        });
 
     });
 };

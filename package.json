@@ -9,6 +9,7 @@
 		"build": "gulp build --build",
 		"zip": "gulp deployZIP --build",
 		"deploy": "gulp deployFTP --build",
+		"gh_deploy": "gh-pages -d dist",
 		"svgSprite": "gulp svgSprite"
 	},
 	"keywords": [],
