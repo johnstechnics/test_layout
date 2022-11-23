@@ -962,6 +962,13 @@ legend {
       align-self: flex-end;
 }
 
+.footer__success-text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  padding-bottom: 216px;
+}
+
 .footer__info {
   font-size: 20px;
   font-weight: 500;
@@ -1254,6 +1261,10 @@ body {
 
   .footer__form .btn {
     width: 100%;
+  }
+
+  .footer__success-text {
+    padding-bottom: 0;
   }
 
   .footer__info {
