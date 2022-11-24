@@ -20,7 +20,7 @@
         }
     }
 
-    &__box-1 {
+    &__texts {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -40,22 +40,22 @@
 
         input {
             height: 60px;
-            background-color: #ffffff17;
+            background-color: $white-0_09per;
             border-radius: 5px;
             margin-bottom: 28px;
             padding: 0 20px;
             font-size: 24px;
-            font-weight: 500;
+            font-weight: 400;
             line-height: 35px;
             color: $white;
 
             &::placeholder {
-                color: #E9F1FF;
+                color: $light_blue;
             }
 
             &:focus {
                 background-color: transparent;
-                outline: 2px solid #EFC247;
+                outline: 2px solid $yellow-2;
             }
 
             &:nth-child(4) {
@@ -63,7 +63,7 @@
             }
 
             &.error {
-                outline: 2px solid #ef4747;
+                outline: 2px solid $red;
             }
 
             @media (max-width: 768px) {
@@ -101,7 +101,7 @@
 
     &__info {
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 28px;
 
         a {
@@ -115,7 +115,7 @@
         }
     }
 
-    &__info-mobile {
+    &__info_mobile {
         display: none;
 
         @media (max-width: 768px) {

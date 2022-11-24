@@ -13,27 +13,27 @@
         display: flex;
         margin-bottom: 150px;
 
+        &__item:not(:last-child) {
+            margin-right: 85px;
+        }
+
+        &__link {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 36px;
+            color: $white;
+            text-transform: uppercase;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
         @media (max-width: 991px) {
             & {
                 display: none;
             }
-        }
-    }
-
-    .menu__item:not(:last-child) {
-        margin-right: 85px;
-    }
-
-    .menu__link {
-        display: inline-block;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 36px;
-        color: $white;
-        text-transform: uppercase;
-
-        &:hover {
-            color: $white;
         }
     }
 
@@ -64,7 +64,7 @@
         opacity: .1;
     }
 
-    &__text-box-1 {
+    &__title-wrap {
         flex: 0 1 800px;
 
         @media (max-width: 991px) {
@@ -77,7 +77,7 @@
 
     &__title {
         font-size: 84px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 80px;
         text-transform: uppercase;
         margin-bottom: 34px;
@@ -106,7 +106,7 @@
         line-height: 36px;
     }
 
-    &__text-box-2 {
+    &__desc-wrap {
         flex: 0 1 543px;
 
         @media (max-width: 991px) {
@@ -118,7 +118,7 @@
 
     &__desc {
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 32px;
         margin-bottom: 91px;
 
@@ -142,10 +142,10 @@
     &__info {
         display: flex;
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 32px;
         color: $white;
-        background: #FFFFFF17;
+        background-color: $white-0_09per;
         backdrop-filter: blur(40.7742px);
         padding-top: 38px;
         padding-bottom: 39px;
@@ -153,7 +153,7 @@
         @media (max-width: 991px) {
             & {
                 flex-direction: column;
-                background: none;
+                background-color: unset;
                 backdrop-filter: unset;
                 padding-top: 0;
                 padding-bottom: 100px;
@@ -174,7 +174,7 @@
         }
     }
 
-    &__info-box-1 {
+    &__members-duration-wrap {
         flex: 0 1 300px;
         margin-right: 100px;
 
@@ -205,7 +205,7 @@
         }
     }
 
-    &__info-box-2 {
+    &__coverage-pr-wrap {
         flex: 0 1 300px;
 
         @media (max-width: 991px) {
@@ -226,7 +226,7 @@
         justify-content: space-between;
     }
 
-    &__info-box-3 {
+    &__arrow-wrap {
         display: flex;
         margin-left: auto;
 
@@ -249,7 +249,7 @@
     }
 
     &__arrow-down {
-        background: rgba(255, 255, 255, 0.0588235294);
+        background-color: $white-0_05per;
 
         @media (max-width: 991px) {
             & {

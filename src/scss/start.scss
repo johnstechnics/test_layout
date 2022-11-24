@@ -1,0 +1,180 @@
+.start {
+    overflow: hidden;
+
+    &__container {
+        padding-bottom: 80px;
+    }
+
+    .no-afraid {
+        &__header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 329px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-bottom: 61px;
+            background-image: url('../img/molochnyi-dom.png');
+            background-repeat: no-repeat;
+            background-position: center;
+
+            @media (max-width: 991px) {
+                & {
+                    margin-left: -20px;
+                    margin-right: -20px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                & {
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 76px;
+        }
+
+        &__img {
+            width: 60px;
+            height: 60px;
+            background-image: url('../img/stair.png');
+            background-repeat: no-repeat;
+            background-size: 60px;
+        }
+
+        &__texts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 36px;
+            margin-bottom: 80px;
+
+            p {
+                flex: 0 1 460px;
+            }
+
+            span {
+                font-weight: 700;
+            }
+
+            @media (max-width: 991px) {
+                & {
+                    grid-template-columns: 1fr;
+                    row-gap: 50px;
+                }
+            }
+        }
+    }
+
+    &__separator {
+        position: relative;
+        margin-bottom: 80px;
+
+        .arrow-down {
+            background-image: linear-gradient(138.91deg, $blue-0_2per 23.29%, $pink-0_2per 88.99%);
+
+            @media (max-width: 991px) {
+                & {
+                    display: none;
+                }
+            }
+        }
+
+        hr {
+            position: absolute;
+            top: 50%;
+            left: 84px;
+            width: 200%;
+            height: 1px;
+            background-image: linear-gradient(138.91deg, $blue-0_5per 23.29%, $pink-0_5per 88.99%);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+
+            @media (max-width: 991px) {
+                & {
+                    left: -20px;
+                }
+            }
+        }
+    }
+
+    .challenge {
+        &__img-mobile {
+            display: none;
+
+            img {
+                width: 100%;
+            }
+
+            @media (max-width: 991px) {
+                & {
+                    display: block;
+                    margin-left: -20px;
+                    margin-right: -20px;
+                    padding-top: 80px;
+                }
+            }
+        }
+
+        &__texts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 50px;
+
+            p {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 36px;
+
+                &:last-child {
+                    grid-column: 2/3;
+
+                    @media (max-width: 991px) {
+                        & {
+                            grid-column: 1/2;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 991px) {
+                & {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto auto auto;
+                    padding-top: 80px;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 60px;
+            margin-bottom: 50px;
+
+            @media (max-width: 445px) {
+                & {
+                    font-size: 50px;
+                }
+            }
+        }
+
+        &__img {
+            width: 150%;
+
+            @media (max-width: 991px) {
+                & {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

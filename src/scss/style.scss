@@ -2,7 +2,7 @@
 @import "fonts";
 @import "colors";
 @import "hero";
-@import "height";
+@import "start";
 @import "about";
 @import "mass-media";
 @import "footer";
@@ -35,14 +35,14 @@ body {
 
 .btn {
     width: 200px;
-    height: 61px;
+    min-height: 61px;
     font-size: 16px;
     font-weight: 700;
     line-height: 32px;
     text-transform: uppercase;
-    color: #010F29;
-    padding: 0 20px;
-    background-image: linear-gradient(143.05deg, #FCA82D 20.13%, #EFC449 85.02%);
+    color: $blue;
+    padding: 10px 20px;
+    background-image: linear-gradient(143.05deg, $orange-1 20.13%, $orange-2 85.02%);
     border-radius: 30px;
 }
 
@@ -54,5 +54,5 @@ body {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    fill: #EFC449;
+    fill: $orange-2;
 }
